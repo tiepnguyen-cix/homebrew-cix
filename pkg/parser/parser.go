@@ -3,6 +3,7 @@ package parser
 import (
 	"fmt"
 	"os"
+	"strings"
 
 	"gopkg.in/yaml.v3"
 )
@@ -163,7 +164,13 @@ func normalizeScript(raw interface{}) []string {
 	case []interface{}:
 		var result []string
 		for _, item := range v {
-			result = append(result, fmt.Sprintf("%v", item))
+			switch s := item.(type) {
+			case string:
+				result = append(result, s)
+			default:
+				b, _ := yaml.Marshal(s)
+				result = append(result, strings.TrimSpace(string(b)))
+			}
 		}
 		return result
 	}
