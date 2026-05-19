@@ -1,16 +1,16 @@
 class Cix < Formula
   desc "Run and debug GitLab CI pipelines locally"
   homepage "https://github.com/tiepnguyen-cix/cix"
-  version "0.1.2"
+  version "0.1.3"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/tiepnguyen-cix/cix/releases/download/v0.1.1/cix-darwin-arm64"
-      sha256 "66f9a9cce058cded03a49e74ddab64c84c44a5fa9f95a4cce0c74b03240eddaa"
+      sha256 "eb3a9503cb6d8896c3bd40a8178e0cb137e0385d39de9b1ce45d6848b7b21ead"
     else
       url "https://github.com/tiepnguyen-cix/cix/releases/download/v0.1.1/cix-darwin-amd64"
-      sha256 "a4440e7853542e985b2528f2b7a340781c40005333d652438aea1fa74efa94fe"
+      sha256 "58046f65a0c831b4faeaac3388f6096eb78979d7f3e79005aacebbd460fc39b5"
     end
   end
 
