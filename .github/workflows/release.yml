@@ -21,10 +21,10 @@ jobs:
       - name: Build binaries
         run: |
           VERSION=${GITHUB_REF_NAME}
-          GOOS=linux   GOARCH=amd64 go build -ldflags="-s -w" -o cix-linux-amd64   ./cmd/cix
-          GOOS=darwin  GOARCH=amd64 go build -ldflags="-s -w" -o cix-darwin-amd64  ./cmd/cix
-          GOOS=darwin  GOARCH=arm64 go build -ldflags="-s -w" -o cix-darwin-arm64  ./cmd/cix
-          GOOS=windows GOARCH=amd64 go build -ldflags="-s -w" -o cix-windows-amd64.exe ./cmd/cix
+          GOOS=linux   GOARCH=amd64 go build -ldflags="-s -w -X main.version=${VERSION}" -o cix-linux-amd64   ./cmd/cix
+          GOOS=darwin  GOARCH=amd64 go build -ldflags="-s -w -X main.version=${VERSION}" -o cix-darwin-amd64  ./cmd/cix
+          GOOS=darwin  GOARCH=arm64 go build -ldflags="-s -w -X main.version=${VERSION}" -o cix-darwin-arm64  ./cmd/cix
+          GOOS=windows GOARCH=amd64 go build -ldflags="-s -w -X main.version=${VERSION}" -o cix-windows-amd64.exe ./cmd/cix
 
       - name: Create Release
         uses: softprops/action-gh-release@v2
