@@ -24,6 +24,7 @@ func rootCmd() *cobra.Command {
 		Use:   "cix",
 		Short: "Run and debug GitLab CI pipelines locally",
 		Long:  "cix — run any GitLab CI pipeline on your machine. No push required.",
+		Version: version,
 	}
 
 	root.AddCommand(
