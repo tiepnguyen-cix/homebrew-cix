@@ -7,8 +7,8 @@ import (
 	"os/exec"
 	"strings"
 
-	"github.com/tiepnguyen-cix/cix/pkg/output"
-	"github.com/tiepnguyen-cix/cix/pkg/parser"
+	"github.com/cix-platform/cix/pkg/output"
+	"github.com/cix-platform/cix/pkg/parser"
 )
 
 // Options cấu hình cho executor
