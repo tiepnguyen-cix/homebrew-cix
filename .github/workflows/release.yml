@@ -20,6 +20,7 @@ jobs:
 
       - name: Build binaries
         run: |
+          VERSION=${GITHUB_REF_NAME}
           GOOS=linux   GOARCH=amd64 go build -ldflags="-s -w" -o cix-linux-amd64   ./cmd/cix
           GOOS=darwin  GOARCH=amd64 go build -ldflags="-s -w" -o cix-darwin-amd64  ./cmd/cix
           GOOS=darwin  GOARCH=arm64 go build -ldflags="-s -w" -o cix-darwin-arm64  ./cmd/cix
